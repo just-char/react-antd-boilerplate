@@ -1,2 +1,3 @@
-# react-antd-boilerplate
-TS + Vite + React + Ant Design + Tailwind CSS
+# React Ant Design Boilerplate
+
+> Made by [Just Char Studio](https://github.com/just-char)
