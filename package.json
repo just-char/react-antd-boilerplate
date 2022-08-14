@@ -13,7 +13,10 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix"
   },
   "dependencies": {
+    "ahooks": "^3.7.0",
     "antd": "^4.22.4",
+    "axios": "^0.27.2",
+    "msw": "^0.44.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -46,5 +49,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
