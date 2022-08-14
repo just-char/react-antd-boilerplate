@@ -17,7 +17,7 @@ service.interceptors.response.use(
   },
   (error) => {
     message.destroy('loading');
-    message.error('Please try again later');
+    message.error('Error');
     return Promise.reject(error);
   },
 );
