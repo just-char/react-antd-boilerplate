@@ -1,3 +1,4 @@
+import { CloseCircleOutlined } from '@ant-design/icons';
 import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 
@@ -18,7 +19,9 @@ const HomePage = () => {
       <Button type="primary" onClick={runLoading}>
         Loading Request
       </Button>
-      <Button onClick={runError}>Error Request</Button>
+      <Button onClick={runError} icon={<CloseCircleOutlined />}>
+        Error Request
+      </Button>
     </div>
   );
 };
