@@ -1,25 +1,26 @@
 import { CloseCircleOutlined } from '@ant-design/icons';
-import { useRequest } from 'ahooks';
+import { useQuery } from '@tanstack/react-query';
 import { Button, message } from 'antd';
 
 import { getError, getLoading } from '@/api';
 
 const HomePage = () => {
-  const { run: runLoading } = useRequest(getLoading, {
-    manual: true,
+  const { refetch: fetchLoading } = useQuery(['loading'], getLoading, {
+    enabled: false,
     onSuccess(data) {
       message.success(JSON.stringify(data));
     },
   });
-
-  const { run: runError } = useRequest(getError, { manual: true });
+  const { refetch: fetchError } = useQuery(['error'], getError, {
+    enabled: false,
+  });
 
   return (
     <div className="flex justify-center gap-10">
-      <Button type="primary" onClick={runLoading}>
+      <Button type="primary" onClick={() => fetchLoading()}>
         Loading Request
       </Button>
-      <Button onClick={runError} icon={<CloseCircleOutlined />}>
+      <Button onClick={() => fetchError()} icon={<CloseCircleOutlined />}>
         Error Request
       </Button>
     </div>

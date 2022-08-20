@@ -1,12 +1,15 @@
 import { BrowserRouter as RouterProvider } from 'react-router-dom';
 
+import QueryProvider from './providers/query';
 import AppRouter from './routes';
 
 const App = () => {
   return (
-    <RouterProvider>
-      <AppRouter />
-    </RouterProvider>
+    <QueryProvider>
+      <RouterProvider>
+        <AppRouter />
+      </RouterProvider>
+    </QueryProvider>
   );
 };
 
